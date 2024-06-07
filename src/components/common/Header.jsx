@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../styles/header.css';
 
 const Header = () => {
-  const [isAccountOpen, setIsAccountOpen] = useState(false);
-
-  const toggleAccount = () => {
-    setIsAccountOpen(!isAccountOpen);
-  };
-
   return (
     <header className="header">
       <div className="logo">
@@ -22,16 +16,12 @@ const Header = () => {
         </ul>
       </nav>
       <div className="account">
-        <button className="account-button" onClick={toggleAccount}>
-          Account
+        <button className="account-button">
+          Log In
         </button>
-        {isAccountOpen && (
-          <ul className="account-dropdown">
-            <li><a href="/">Profile</a></li>
-            <li><a href="/">Settings</a></li>
-            <li><a href="/">Logout</a></li>
-          </ul>
-        )}
+        <button className="account-button">
+          Register
+        </button>
       </div>
     </header>
   );
