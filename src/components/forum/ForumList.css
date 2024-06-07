@@ -1,0 +1,149 @@
+.forum-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    width: 70%;
+}
+  
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+  
+.forum-header h2 {
+    font-size: 30px;
+    color: #2c2b5e;
+}
+  
+.forum-header button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #2c2b5ebd;
+    cursor: pointer;
+}
+  
+.forum-header button:hover {
+    text-decoration: underline;
+}
+  
+.forum-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.forum-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: start;
+    margin-bottom: 20px;
+    max-width: 30%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    min-height: 380px;
+}
+  
+.forum-card-content {
+    padding: 20px;
+}
+  
+.forum-card-content p {
+    font-size: 18px;
+    color: #2c2b5ebd;
+    margin-bottom: 10px;
+}
+
+.forum-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.forum-title h3 {
+    font-size: 22px;
+    color: #2c2b5e;
+    padding: 10px;
+}
+
+.forum-title p {
+    font-size: 18px;
+    color: #2c2b5ebd;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.forum-user {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.forum-user img {
+    width: 50px;
+}
+
+.forum-user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: start;
+    margin-left: 10px;
+}
+
+.forum-user-info h3 {
+    font-size: 15px;
+    color: #2c2b5e;
+    margin-bottom: 5px;
+}
+
+.forum-user-info p {
+    font-size: 15px;
+    color: #2c2b5ebd;
+}
+
+.forum-options {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.forum-options img {
+    width: 20px;   
+}
+
+.forum-options p {
+    font-size: 15px;
+    color: #2c2b5ebd;
+    margin: 0px;
+    margin-left: 5px;
+
+}
+
+.forum-options button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #2c2b5e;
+    padding: 10px;
+    border: 2px solid #2c2b5e;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.forum-options button:hover {
+    background-color: #f0f0f0;
+}
