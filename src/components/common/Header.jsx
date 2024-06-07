@@ -15,9 +15,10 @@ const Header = () => {
       </div>
       <nav className="navigation">
         <ul>
+          <li><a href="/">Games</a></li>
           <li><a href="/">Reviews</a></li>
-          <li><a href="/">News</a></li>
-          <li><a href="/">Guides</a></li>
+          <li><a href="/">Forum</a></li>
+          <li><a href="/">Wishlist</a></li>
         </ul>
       </nav>
       <div className="account">
