@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import '../../styles/register.css'
+import axios from 'axios';
 
 function Register() {
   const initialValues = {
@@ -15,7 +16,11 @@ function Register() {
 
   });
 
-  const onSubmit = () => {};
+  const onSubmit = (data) => {
+    axios.post('http://localhost:3001/auth', data).then((response) => {
+      console.log(data);
+    });
+  };
 
   return (
     <div className='register-main'>
@@ -37,12 +42,13 @@ function Register() {
           <ErrorMessage name='password' component='span'/>
           <Field
             autocomplete="off"
+            type="password"
             id="inputCreatePost"
             name="password"
             placeholder="Your password"
           />
 
-          <button type='submit'>Create post </button>
+          <button type='submit'>Register</button>
         </Form>
       </Formik> 
     </div>

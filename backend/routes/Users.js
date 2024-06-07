@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const { Users } = require('../models');
 const bcrypt = require('bcrypt');
+const cors = require('cors');
+
+router.use(cors());
 
 router.post("/", async (req, res) => {
     const {username, password} = req.body;
