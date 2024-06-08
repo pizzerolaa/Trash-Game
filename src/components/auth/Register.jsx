@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import '../../styles/register.css'
 import axios from 'axios';
+import Logo from '../../assets/logo.svg'
 
 function Register() {
   const initialValues = {
@@ -29,25 +30,37 @@ function Register() {
         validationSchema={validationSchema}
       >
         <Form className='fromContainer'>
-          <label>Username: </label>
-          <ErrorMessage name='username' component='span'/>
-          <Field
-            autocomplete="off"
-            id="inputCreatePost"
-            name="username"
-            placeholder="(Ex. fher@gmail.com)"
-          />
+          <div className="register-heading">
+            <img src={Logo} alt="" />
+            <h1>Register</h1>
+          </div>
 
-          <label>Password: </label>
-          <ErrorMessage name='password' component='span'/>
-          <Field
-            autocomplete="off"
-            type="password"
-            id="inputCreatePost"
-            name="password"
-            placeholder="Your password"
-          />
+          <div className="register-field">
+            <div className="register-enter">
+              <label>Username: </label>  
+              <Field
+                autocomplete="off"
+                id="inputCreatePost"
+                name="username"
+                placeholder="(Ex. fher@gmail.com)"
+              />
+            </div>
+            <ErrorMessage name='username' component='span'/>
+          </div>
 
+          <div className="register-field">
+            <div className="register-enter">
+              <label>Password: </label>  
+              <Field
+                autocomplete="off"
+                type="password"
+                id="inputCreatePost"
+                name="password"
+                placeholder="Your password"
+              />
+            </div>
+            <ErrorMessage name='password' component='span'/>
+          </div>
           <button type='submit'>Register</button>
         </Form>
       </Formik> 

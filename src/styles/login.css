@@ -1,8 +1,4 @@
-/* * {
-    color: black;
-} */
-
-.register-main {
+.login-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +19,7 @@
     border-radius: 15px;
 }
 
-.register-heading {
+.login-heading {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +28,7 @@
     margin-bottom: 20px;
 }
 
-.register-heading img {
+.login-heading img {
     width: 40px;
     background-color: #2c2b5e;
     padding: 10px;
@@ -40,14 +36,14 @@
     margin-bottom: 15px;
 }
 
-.register-heading h1 {
+.login-heading h1 {
     font-size: 40px;
     color: #2c2b5e;
     margin-bottom: 10px;
     text-align: center;
 }
 
-.register-field {
+.login-field {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -55,7 +51,7 @@
     margin-bottom: 10px;
 }
 
-.register-enter {
+.login-enter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,13 +59,13 @@
     margin-top: 10px;
 }
 
-.register-enter label{
+.login-enter label{
     font-size: 20px;
     color: #2c2b5e;
     margin-right: 10px;
 }
 
-.register-enter input {
+.login-enter input {
     width: 70%;
     padding: 5px;
     border-radius: 5px;
@@ -78,7 +74,7 @@
     color: #2c2b5ebd;
 }
 
-.register-field span {
+.login-field span {
     color: red;
     font-size: 15px;
     margin-top: 5px;
