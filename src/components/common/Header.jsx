@@ -8,22 +8,33 @@ const Header = () => {
   const { authState, setAuthState } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/auth/auth', {
-      headers: {
-        accessToken: localStorage.getItem("accessToken"),
+    const checkAuth = async () => {
+      const token = localStorage.getItem("accessToken");
+      if (token) {
+        try {
+          const response = await axios.get('http://localhost:3001/auth/auth', {
+            headers: {
+              accessToken: token,
+            }
+          });
+          if (response.data.error) {
+            setAuthState({ username: "", id: 0, status: false });
+          } else {
+            setAuthState({
+              username: response.data.username,
+              id: response.data.id,
+              status: true,
+            });
+          }
+        } catch (error) {
+          console.error("Authentication error:", error);
+          setAuthState({ username: "", id: 0, status: false });
+        }
       }
-    }).then((response) => {
-      if (response.data.error) {
-        setAuthState({ username: "", id: 0, status: false });
-      } else {
-        setAuthState({
-          username: response.data.username,
-          id: response.data.id,
-          status: true,
-        });
-      }
-    });
-  }, []); // Add an empty dependency array to run only once
+    };
+
+    checkAuth();
+  }, [setAuthState]);
 
   const logout = () => {
     localStorage.removeItem("accessToken");
@@ -38,9 +49,9 @@ const Header = () => {
       <nav className="navigation">
         <ul>
           <Link to='/'><li><a href="/">Games</a></li></Link>
-          <li><a href="/">Reviews</a></li>
-          <li><a href="/">Forum</a></li>
-          <li><a href="/">Wishlist</a></li>
+          <Link to='/'><li><a href="/">Reviews</a></li></Link>
+          <Link to='/'><li><a href="/">Forum</a></li></Link>
+          <Link to='/'><li><a href="/">Wishlist</a></li></Link>
         </ul>
       </nav>
       <div className="account">
@@ -59,7 +70,7 @@ const Header = () => {
           </>
         ) : (
           <>
-            <span>{authState.username}</span>
+            <span className='username-account'>Hello again {authState.username}!!</span>
             <button className="account-button" onClick={logout}>
               Log Out
             </button>

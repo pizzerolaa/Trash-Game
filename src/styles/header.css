@@ -41,6 +41,12 @@
 
 .account {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  padding-right: 10px;
 }
 
 .account svg {
@@ -125,9 +131,8 @@
   color: #333;
 }
 
-.account h1 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
+.username-account {
+  font-weight: bold;
+  padding: auto;
+
 }
