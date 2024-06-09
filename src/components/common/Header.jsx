@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/header.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import Login from '../auth/Login';
-import Register from '../auth/Register';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-import axios  from 'axios';
+import axios from 'axios';
 
 const Header = () => {
   const [authState, setAuthState] = useState(false);
-  
+
   useEffect(() => {
-    axios.get('http://localhost:3001/auth/auth', {headers: {
-      accessToken: localStorage.getItem("accessToken"),
-    }}).then((response) => {
-      if(response.data.error) {
-        setAuthState(false)
+    axios.get('http://localhost:3001/auth/auth', {
+      headers: {
+        accessToken: localStorage.getItem("accessToken"),
+      }
+    }).then((response) => {
+      if (response.data.error) {
+        setAuthState(false);
       } else {
-        setAuthState(true)
+        setAuthState(true);
       }
     });
   }, []);
@@ -36,7 +36,7 @@ const Header = () => {
           </ul>
         </nav>
         <div className="account">
-        {!authState && (
+          {!authState && (
             <>
               <Link to='/login'>
                 <button className="account-button">
@@ -51,10 +51,6 @@ const Header = () => {
             </>
           )}
         </div>
-        <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
       </AuthContext.Provider>
     </header>
   );
