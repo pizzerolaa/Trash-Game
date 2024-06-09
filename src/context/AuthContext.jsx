@@ -1,9 +1,3 @@
-import React from 'react'
+import { createContext } from 'react';
 
-function AuthProvider() {
-  return (
-    <div>AuthProvider</div>
-  )
-}
-
-export default AuthProvider
+export const AuthContext = createContext({ authState: false, setAuthState: () => {} });
