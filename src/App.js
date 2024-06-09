@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { AuthProvider } from './context/AuthContext';
 import './fonts/fonts.css';
@@ -11,11 +11,19 @@ import Register from './components/auth/Register';
 import Games from './pages/Games';
 import GameDetails from './pages/GameDetails';
 import Profile from './pages/Profile';
+import { AuthContext } from './context/AuthContext';
 
 function App() {
+  const [authState, setAuthState] = useState({
+    username: "",
+    id: 0,
+    status: false,
+  });
+
+
   return (
-    // <AuthProvider>
       <BrowserRouter>
+      <AuthContext.Provider value={{authState, setAuthState}}>
         <div className="App">
           <Header />
           <main>
@@ -30,8 +38,8 @@ function App() {
           </main>
           <Footer />
         </div>
+        </AuthContext.Provider>
       </BrowserRouter>
-    // </AuthProvider>
   );
 }
 
