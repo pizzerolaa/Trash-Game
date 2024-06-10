@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# Game Review & Comment Web Application
+
+En este proyecto se desarrolló una aplicaicón web para hacer reseñas y comentarios a reseñas, de una variedad de juegos registrados en la página. Después de crear una cuenta e iniciar sesión, podrás acceder a estas funcionallidades y leer cada uno de las entradas hechas por diferentes usuarios.
+
+## Requerimientos
+
+Para poder iniciar y correr lo contenido en este repositorio, será necesario contar ciertos programas y dependencias, los cuales se enlistan a continuación...
+
+### Node JS
+
+Es necesario contar con Node JS instalado en su equipo para iniciar tanto la visualización de la página como el servidor de esta. Para ello accede a la siguiente dirección [Download Node JS](https://nodejs.org/en/download/package-manager), y después de elegir de las distintas opciones la que más te convenga, sigue las instrucciones ahí descritas.
+
+### Servicio local de Base de Datos 
+
+También es necesario contar con algún servicio o sistema de gestión de bases de datos, alojado localmente en tu equipo. En caso de este proyecto, será necesario que puede correr MySQL. Para esto nosotros recomendamos XAMPP que se puede encontrar en el siguiente enlace: [XAMPP Installers and Downloads](https://www.apachefriends.org/es/index.html).
+
+## Ejecutar el Proyecto
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
