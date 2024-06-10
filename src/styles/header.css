@@ -16,11 +16,14 @@
 .logo {
   font-size: 24px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
-.logo svg {
-  width: 5%;
+.logo img {
+  width: 30px;
   margin: 0;
+  margin-right: 10px;
 }
 
 .navigation ul {

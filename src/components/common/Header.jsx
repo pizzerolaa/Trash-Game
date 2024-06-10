@@ -3,6 +3,7 @@ import '../../styles/header.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
+import Logo from '../../assets/logo.svg';
 
 const Header = () => {
   const { authState, setAuthState } = useContext(AuthContext);
@@ -44,6 +45,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
+        <img src={Logo} alt="" />
         TrashGame
       </div>
       <nav className="navigation">
