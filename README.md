@@ -47,12 +47,16 @@ Por último, damos en "Importar".
 Completo lo anterior, en la terminal de tu preferencia ubícate en la carpeta fuente del repositorio clonado y ejecuta los siguientes comandos:
 
 `npm i`: Instala las dependencias externas del proyecto.
+
 `npm start`: Inicia la aplicación de REACT.
+
 
 Por último, entra a la carpeta de 'backend' con ayuda `cd .\backend\` y ejecuta:
 
 `npm i`: Instala las dependencias internas del proyecto.
-`node index.js`: Inicia la aplicación de REACT.
+
+`node index.js`: Inicia el servidor de Express.
+
 
 Terminado esto, la página estará lista para su uso!
 
