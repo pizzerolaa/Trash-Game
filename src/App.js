@@ -12,6 +12,7 @@ import Games from './pages/Games';
 import Reviews from './pages/Reviews';
 import GameDetails from './pages/GameDetails';
 import Profile from './pages/Profile';
+import ReviewsForm from './pages/ReviewForm';
 import { AuthContext } from './context/AuthContext';
 
 function App() {
@@ -20,7 +21,6 @@ function App() {
     id: 0,
     status: false,
   });
-
 
   return (
       <BrowserRouter>
@@ -36,6 +36,7 @@ function App() {
               <Route path="/reviews" element={<Reviews />} />
               <Route path="/games/:id" element={<GameDetails />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/reviewsForm" element={<ReviewsForm />} />
             </Routes>
           </main>
           <Footer />
