@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import gameImage from '../assets/gta6.jpg'
 import '../styles/home.css'
 import GameList from '../components/games/GameList'
@@ -15,7 +16,9 @@ const Home = () => {
             <h1>Discover the latest game reviews</h1>
             <p>Get expert opinions and insights on the hottest video games.</p>
             <div className="cta-buttons">
-              <button className="explore-button">Explore Games</button>
+              <Link to='/games'>
+                <button className="explore-button">Explore Games</button>
+              </Link>
               <button className="review-button">Write a Review</button>
             </div>
           </div>
@@ -25,9 +28,10 @@ const Home = () => {
         </div>
       </div>
       <div className="home-page-space-2">
-        <GameList />
+        {/* <GameList /> */}
+        <ReviewList />
       </div>
-      <div className="home-page-space-1">
+      {/* <div className="home-page-space-1">
         <ReviewList />
       </div>
       <div className="home-page-space-2">
@@ -35,7 +39,7 @@ const Home = () => {
       </div>
       <div className="home-page-space-1">
         <Wishlist />
-      </div>
+      </div> */}
     </div>
   )
 }

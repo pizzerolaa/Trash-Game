@@ -70,10 +70,10 @@ const Header = () => {
           </>
         ) : (
           <>
-            <span className='username-account'>Hello again {authState.username}!!</span>
             <button className="account-button" onClick={logout}>
               Log Out
             </button>
+            <span className='username-account'>Hello again {authState.username}!!</span>
           </>
         )}
       </div>

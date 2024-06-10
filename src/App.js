@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Games from './pages/Games';
+import Reviews from './pages/Reviews';
 import GameDetails from './pages/GameDetails';
 import Profile from './pages/Profile';
 import { AuthContext } from './context/AuthContext';
@@ -32,6 +33,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/games" element={<Games />} />
+              <Route path="/reviews" element={<Reviews />} />
               <Route path="/games/:id" element={<GameDetails />} />
               <Route path="/profile" element={<Profile />} />
             </Routes>
