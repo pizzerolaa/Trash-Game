@@ -16,9 +16,52 @@ También es necesario contar con algún servicio o sistema de gestión de bases 
 
 ## Ejecutar el Proyecto
 
+### Clonar el repositorio locamente
 
+Como primer paso debemos clonar este repositorio localmente con la ayuda del comando...
+
+`git clone https://github.com/pizzerolaa/Aplicacion-MVC.git`
+
+..., ejecutándolo en la terminal de tu preferencia, dentro el directorio donde quieras que se ubiquen alojados los archivos de la aplicación. 
+
+### Configurar la Base de Datos
+
+Después de haber clonado el repositorio, necesitamos importar la base de datos al sistema de gestión. Para ello primero abre XAMPP o la aplicación de tu predferencia y asegúrate de que los servicios de Apache y MySQL se encuentren en correcto funcionamiento, como se muestra en la imagen:
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/a82ba355-6b8a-4f82-a11c-e194d3ff97a9)
+
+Posteriormente, ingresamos al panel de administración de MySQL, mediante el botón 'Admin' resaltado. Dentro, en el panel del lateral izquierdo seleccionamos la opción de "Nueva" y por nombre le daremos 'appmvc'. Luego daremos click en "Crear".
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/cfff52c9-9356-4c28-acf6-313d595aace4)
+
+Una vez creada, en la barra superior seleccionamos "Importar" y seleccionamos el archivo 'appMVC.sql' ubicado en la carpeta SRC del repositorio recién clonado.
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/bc38ded2-8de6-4da6-9825-9ae9b1c477b5)
+
+Por último, damos en "Importar".
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/a1fc1d23-d6eb-4cd7-8a24-b64d7571ba54)
+
+### Correr localmente la aplicación
+
+Completo lo anterior, en la terminal de tu preferencia ubícate en la carpeta fuente del repositorio clonado y ejecuta los siguientes comandos:
+
+`npm i`: Instala las dependencias externas del proyecto.
+`npm start`: Inicia la aplicación de REACT.
+
+Por último, entra a la carpeta de 'backend' con ayuda `cd .\backend\` y ejecuta:
+
+`npm i`: Instala las dependencias internas del proyecto.
+`node index.js`: Inicia la aplicación de REACT.
+
+Terminado esto, la página estará lista para su uso!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+
+
+
 
 ## Available Scripts
 
