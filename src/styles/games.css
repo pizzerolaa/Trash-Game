@@ -37,10 +37,12 @@
     transition: 0.3s;
 }
 
-
+.games-image {
+    width: 50%;
+}
 
 .games-image img {
-    width: 700px;
+    max-width: 100%;
     border-radius: 10px;
     margin: 20px;
 }
