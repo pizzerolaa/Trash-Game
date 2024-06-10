@@ -20,7 +20,7 @@ También es necesario contar con algún servicio o sistema de gestión de bases 
 
 Como primer paso debemos clonar este repositorio localmente con la ayuda del comando...
 
-`git clone https://github.com/pizzerolaa/Aplicacion-MVC.git`
+- `git clone https://github.com/pizzerolaa/Aplicacion-MVC.git`
 
 ..., ejecutándolo en la terminal de tu preferencia, dentro el directorio donde quieras que se ubiquen alojados los archivos de la aplicación. 
 
@@ -46,19 +46,19 @@ Por último, damos en "Importar".
 
 Completo lo anterior, en la terminal de tu preferencia ubícate en la carpeta fuente del repositorio clonado y ejecuta los siguientes comandos:
 
-`npm i`: Instala las dependencias externas del proyecto.
+- `npm i`: Instala las dependencias externas del proyecto.
 
-`npm start`: Inicia la aplicación de REACT.
+- `npm start`: Inicia la aplicación de REACT.
 
 
 Por último, entra a la carpeta de 'backend' con ayuda `cd .\backend\` y ejecuta:
 
-`npm i`: Instala las dependencias internas del proyecto.
+- `npm i`: Instala las dependencias internas del proyecto.
 
-`node index.js`: Inicia el servidor de Express.
+- `node index.js`: Inicia el servidor de Express.
 
 
-Terminado esto, la página estará lista para su uso!
+Terminado esto, la página estará lista para su uso.
 
 ## HAPPY ROUTE
 
