@@ -38,7 +38,7 @@ Una vez creada, en la barra superior seleccionamos "Importar" y seleccionamos el
 
 ![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/bc38ded2-8de6-4da6-9825-9ae9b1c477b5)
 
-Por último, damos en "Importar".
+Por último, damos en "Importar" al final de la página.
 
 ![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/a1fc1d23-d6eb-4cd7-8a24-b64d7571ba54)
 
