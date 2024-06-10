@@ -1,0 +1,31 @@
+function addComment() {
+    const commentText = document.getElementById('newComment').value;
+    if (commentText === '') return;
+  
+    const commentList = document.getElementById('commentList');
+    const newComment = document.createElement('div');
+    newComment.className = 'comment-item';
+  
+    newComment.innerHTML = `
+      <div>${commentText}</div>
+      <div class="reactions">
+        <button onclick="addReaction(this, 'like')">👍 <span>0</span></button>
+        <button onclick="addReaction(this, 'dislike')">👎 <span>0</span></button>
+      </div>
+    `;
+  
+    commentList.appendChild(newComment);
+    document.getElementById('newComment').value = '';
+  }
+  
+  function addReaction(button, type) {
+    const countSpan = button.querySelector('span');
+    let count = parseInt(countSpan.textContent);
+  
+    if (type === 'like') {
+      countSpan.textContent = count + 1;
+    } else if (type === 'dislike') {
+      countSpan.textContent = count + 1;
+    }
+  }
+  

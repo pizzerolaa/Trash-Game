@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Bookmarks</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; }
+        nav { 
+            background-color: #333; 
+            color: white; 
+            padding: 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        nav h1 { margin: 0; }
+        .user-select { 
+            padding: 5px; 
+            border-radius: 4px; 
+            border: none; 
+            background-color: #4a4a4a; 
+            color: white; 
+        }
+        .board { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 20px; 
+            padding: 20px; 
+        }
+        .bookmark {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .bookmark:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+        .bookmark h3 { color: #333; margin-top: 0; }
+        .bookmark p { color: #666; }
+        .bookmark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #4a90e2;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .bookmark.personal::before { background-color: #43a047; }
+        .bookmark .user { 
+            font-size: 0.8em; 
+            color: #999; 
+            margin-top: 15px; 
+            padding-top: 10px; 
+            border-top: 1px solid #eee; 
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+            cursor: pointer;
+            display: none;
+        }
+        .bookmark:hover .delete-btn { display: block; }
+        .form-container { 
+            max-width: 500px; 
+            margin: 20px auto; 
+            padding: 20px; 
+            background-color: #fff; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+        }
+        input, textarea, select { 
+            width: 100%; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            font-size: 14px;
+        }
+        button { 
+            background-color: #4a90e2; 
+            color: white; 
+            border: none; 
+            padding: 12px 20px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        button:hover { background-color: #357ABD; }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Team Bookmarks</h1>
+        <select id="userSelect" class="user-select">
+            <option value="alice">👩‍💼 Alice</option>
+            <option value="bob">👨‍💻 Bob</option>
+            <option value="carol">👩‍🔬 Carol</option>
+        </select>
+    </nav>
+
+    <div class="form-container">
+        <h2>Add a New Bookmark</h2>
+        <input type="text" id="title" placeholder="Title">
+        <textarea id="content" placeholder="Your comment"></textarea>
+        <select id="category">
+            <option value="work">👔 Work</option>
+            <option value="personal">🌿 Personal</option>
+        </select>
+        <button onclick="addBookmark()">Add Bookmark</button>
+    </div>
+
+    <div class="board" id="bookmarkBoard"></div>
+
+    <script>
+        let currentUser = 'alice';
+        document.getElementById('userSelect').addEventListener('change', function() {
+            currentUser = this.value;
+            renderBookmarks();
+        });
+
+        const bookmarks = [
+            { id: 1, title: "Project Deadline", content: "Submit project by Friday.", category: "work", user: "bob" },
+            { id: 2, title: "Team Lunch", content: "Let's grab lunch on Thursday!", category: "personal", user: "alice" }
+        ];
+
+        function addBookmark() {
+            const title = document.getElementById('title').value.trim();
+            const content = document.getElementById('content').value.trim();
+            const category = document.getElementById('category').value;
+
+            if (title && content) {
+                const newBookmark = {
+                    id: bookmarks.length + 1,
+                    title: title,
+                    content: content,
+                    category: category,
+                    user: currentUser
+                };
+                bookmarks.unshift(newBookmark); // Add to the beginning
+                renderBookmarks();
+                
+                // Clear form
+                document.getElementById('title').value = '';
+                document.getElementById('content').value = '';
+            } else {
+                alert("Please fill in both title and content!");
+            }
+        }
+
+        function deleteBookmark(id) {
+            const index = bookmarks.findIndex(bm => bm.id === id);
+            if (index > -1 && bookmarks[index].user === currentUser) {
+                bookmarks.splice(index, 1);
+                renderBookmarks();
+            } else {
+                alert("You can only delete your own bookmarks!");
+            }
+        }
+
+        function renderBookmarks() {
+            const board = document.getElementById('bookmarkBoard');
+            board.innerHTML = '';
+            bookmarks.forEach(bm => {
+                const bookmark = document.createElement('div');
+                bookmark.className = `bookmark ${bm.category}`;
+                bookmark.innerHTML = `
+                    <h3>${bm.title}</h3>
+                    <p>${bm.content}</p>
+                    <div class="user">Added by ${getUserIcon(bm.user)} ${bm.user}</div>
+                    <button class="delete-btn" onclick="deleteBookmark(${bm.id})">X</button>
+                `;
+                board.appendChild(bookmark);
+            });
+        }
+
+        function getUserIcon(user) {
+            const icons = { alice: '👩‍💼', bob: '👨‍💻', carol: '👩‍🔬' };
+            return icons[user] || '👤';
+        }
+
+        renderBookmarks();
+    </script>
+</body>
+</html>
