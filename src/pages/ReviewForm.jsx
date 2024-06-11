@@ -1,24 +1,61 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from 'yup' 
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import * as Yup from 'yup'
+import { AuthContext } from "../context/AuthContext";
 import axios from 'axios'
 
 function ReviewForm() {
     const initialValues = {
         title: "",
         postText: "",
-        username: "",
     }
+    const { authState, setAuthState } = useContext(AuthContext);
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        const checkAuth = async () => {
+          const token = localStorage.getItem("accessToken");
+          if (token) {
+            try {
+              const response = await axios.get('http://localhost:3001/auth/auth', {
+                headers: {
+                  accessToken: token,
+                }
+              });
+              if (response.data.error) {
+                setAuthState({ username: "", id: 0, status: false });
+              } else {
+                setAuthState({
+                  username: response.data.username,
+                  id: response.data.id,
+                  status: true,
+                });
+              }
+            } catch (error) {
+              console.error("Authentication error:", error);
+              setAuthState({ username: "", id: 0, status: false });
+            }
+          }
+        };
+        if (!authState.status){
+            console.log(authState.status);
+            navigate('/login');
+            alert("Debes iniciar sesión para escribir una reseña")
+        }
+    
+        checkAuth();
+      }, [setAuthState]);
     const validationSchema = Yup.object().shape({
-        title: Yup.string().required("You must input a Title!"),
+        title: Yup.string().required(),
         postText: Yup.string().required(),
-        username: Yup.string().min(3).max(15).required(),
     })
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3001/posts", data).then((response) => {
-            console.log("IT WORKED");
+        axios.post("http://localhost:3001/posts", data, {
+            headers: {accessToken: localStorage.getItem('accessToken')}}
+        ).then((response) => {
+            navigate('/reviews');
           });
     }
 
@@ -26,12 +63,7 @@ function ReviewForm() {
         <div className="createReview">
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema} >
                 <Form>
-                    <label>Name: </label>
-                    <ErrorMessage name="username" component="span" />
-                    <Field 
-                        id="inputCreateReview" 
-                        name="username" 
-                        placeholder="Name"/>
+                    <label>{authState.username}</label>
                     <label>Title: </label>
                     <ErrorMessage name="title" component="span" />
                     <Field 
@@ -44,7 +76,9 @@ function ReviewForm() {
                         id="inputCreateReview" 
                         name="postText" 
                         placeholder="Comment"/>
-                    <button type="submit"> Create Post</button>
+                    {/* <Link to ='/reviews'> */}
+                        <button type="submit"> Create Post</button>
+                    {/* </Link> */}
                 </Form>
             </Formik>
         </div>

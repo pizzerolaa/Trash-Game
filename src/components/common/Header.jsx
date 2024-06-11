@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import '../../styles/header.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
@@ -72,9 +72,11 @@ const Header = () => {
           </>
         ) : (
           <>
+            <Link to='/'>
             <button className="account-button" onClick={logout}>
               Log Out
             </button>
+            </Link>
             <span className='username-account'>Hello again {authState.username}!!</span>
           </>
         )}
