@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext';
 import gameImage from '../assets/gta6.jpg'
 import '../styles/home.css'
-import GameList from '../components/games/GameList'
-import Wishlist from '../components/wishlist/WishlistList'
 import ReviewList from '../components/reviews/ReviewList'
-import ForumList from '../components/forum/ForumList'
 import axios from 'axios';
 
 const Home = () => {
