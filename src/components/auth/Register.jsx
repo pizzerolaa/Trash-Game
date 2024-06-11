@@ -12,17 +12,22 @@ function Register() {
     password: "",
   };
   const navigate = useNavigate();
+  const [error, setError] = React.useState("");
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
     password: Yup.string().min(4).max(20).required(),
-
   });
 
   const onSubmit = (data) => {
     axios.post('http://localhost:3001/auth', data).then((response) => {
       console.log(data);
       navigate('/login');
+    }).catch((error) => {
+      if (error.response && error.response.data) {
+        setError(error.response.data.error);
+        alert('Username already exists')
+      }
     });
   };
 
@@ -38,11 +43,13 @@ function Register() {
             <h1>Register</h1>
           </div>
 
+          {error && <div className="error-message">{error}</div>}
+
           <div className="register-field">
             <div className="register-enter">
               <label>Username: </label>  
               <Field
-                autocomplete="off"
+                autoComplete="off"
                 id="inputCreatePost"
                 name="username"
                 placeholder="(Ex. fher@gmail.com)"
@@ -55,7 +62,7 @@ function Register() {
             <div className="register-enter">
               <label>Password: </label>  
               <Field
-                autocomplete="off"
+                autoComplete="off"
                 type="password"
                 id="inputCreatePost"
                 name="password"
@@ -71,4 +78,4 @@ function Register() {
   )
 }
 
-export default Register
+export default Register;
