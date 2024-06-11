@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react';
+import axios from "axios";
 import './ReviewList.css'
 import userIcon from '../../assets/user.svg'
-import fullStar from '../../assets/fullStar.svg'
-import emptyStar from '../../assets/emptyStar.svg'
+import { AuthContext } from '../../context/AuthContext';
 
 const ReviewList = () => {
+
+  const [listOfPosts, setListOfPosts] = useState([]);
+  const { authState } = useContext(AuthContext);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/posts/latest").then((response) => {
+      setListOfPosts(response.data)
+    });
+  }, []);
+
   return (
     <div className="review-content">
       <div className="review-header">
@@ -12,28 +22,26 @@ const ReviewList = () => {
         <button>View All</button>
       </div>
       <div className="review-list">
-        <div className="review-card">
-          <div className="review-user">
-            <img src={userIcon} alt="User Icon" />
-            <div className="review-user-info">
-              <h3>John Doe</h3>
-              <p>Reviewed on 2023-06-07</p>
+          {listOfPosts.map((value, key) => {
+          return (
+            <div className="review-card">
+            <div className="review-user">
+              <img src={userIcon} alt="User Icon" />
+              <div className="review-user-info">
+                <h3>
+                  {value.username}
+                </h3>
+                <p>{value.createdAt}</p>
+              </div>
+            </div>
+            <div className="review-card-content">
+              <h3>{value.title}</h3>
+              <p>{value.postText}</p>
+              <button className="reviewButton">Read Full Review</button>
             </div>
           </div>
-          <div className="review-card-content">
-            <h3>Elder Ring</h3>
-            <p>FromSoftware has done it again! This game is a masterpiece.</p>
-            <div className="review-stars">
-              <img src={fullStar} alt="" />
-              <img src={fullStar} alt="" />
-              <img src={fullStar} alt="" />
-              <img src={fullStar} alt="" />
-              <img src={emptyStar} alt="" />
-              <p>4/5</p>
-            </div>
-            <button className="reviewButton">Read Full Review</button>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   )
