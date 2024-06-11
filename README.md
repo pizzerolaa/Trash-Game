@@ -1,4 +1,4 @@
-# Game Review & Comment Web Application
+# Game Review Web Application
 
 En este proyecto se desarrolló una aplicaicón web para hacer reseñas y comentarios a reseñas, de una variedad de juegos registrados en la página. Después de crear una cuenta e iniciar sesión, podrás acceder a estas funcionallidades y leer cada uno de las entradas hechas por diferentes usuarios.
 
