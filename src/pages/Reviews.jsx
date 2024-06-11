@@ -10,8 +10,6 @@ function Reviews() {
   const [listOfPosts, setListOfPosts] = useState([]);
   const { authState } = useContext(AuthContext);
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     axios.get("http://localhost:3001/posts").then((response) => {
       setListOfPosts(response.data)
@@ -22,7 +20,6 @@ function Reviews() {
     axios.delete(`http://localhost:3001/posts/${id}`, {
       headers: { accessToken: localStorage.getItem("accessToken") }
     }).then(() => {
-      alert("delete success");
       window.location.reload();
     })
   };
