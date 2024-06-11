@@ -4,6 +4,8 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import { AuthContext } from "../context/AuthContext";
 import axios from 'axios'
+import '../styles/reviewForm.css'
+import userIcon from '../assets/user.svg'
 
 function ReviewForm() {
     const initialValues = {
@@ -60,11 +62,43 @@ function ReviewForm() {
     }
 
     return (
-        <div className="createReview">
+        <div className="reviewForm">
+          <div className="reviewForm-card">
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema} >
-                <Form>
+              <Form>
+                <div className="reviewForm-content">
+                  <h2>New Review</h2>
+                  <div className="reviewForm-subtitle">
+                    <h3>Writting as:</h3>
+                  </div>
+                  <div className="reviewForm-user">
+                    <img src={userIcon} alt="" />
                     <label>{authState.username}</label>
-                    <label>Title: </label>
+                  </div>
+                  <div className="reviewForm-field">
+                    <div className="reviewForm-form">
+                      <label>Title: </label>
+                      <Field 
+                        id="inputCreateReview" 
+                        name="title" 
+                        placeholder="Game title"/>
+                    </div>
+                    <ErrorMessage name="title" component="span" />
+                  </div>
+                  <div className="reviewForm-field-2">
+                    {/* <div className="reviewForm-form"> */}
+                      <label>Comment: </label>
+                      <Field 
+                        id="inputCreateReview" 
+                        name="postText" 
+                        placeholder="Add your review description here"/>
+                    {/* </div> */}
+                    <ErrorMessage name="postText" component="span" />
+                  </div>
+                  <button type="submit"> Create Post</button>
+                </div>
+                    
+                    {/* <label>Title: </label>
                     <ErrorMessage name="title" component="span" />
                     <Field 
                         id="inputCreateReview" 
@@ -76,11 +110,13 @@ function ReviewForm() {
                         id="inputCreateReview" 
                         name="postText" 
                         placeholder="Comment"/>
-                    {/* <Link to ='/reviews'> */}
+                    <Link to ='/reviews'>
                         <button type="submit"> Create Post</button>
-                    {/* </Link> */}
-                </Form>
+                    </Link> */}
+                    
+              </Form>
             </Formik>
+          </div>
         </div>
     )
 }
