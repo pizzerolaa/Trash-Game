@@ -3,7 +3,6 @@ import axios from "axios";
 import userIcon from "../assets/user.svg"
 import "../styles/reviews.css"
 import { AuthContext } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 
 function Reviews() {
 
