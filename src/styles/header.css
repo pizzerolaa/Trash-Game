@@ -13,17 +13,29 @@
   color: #fff;
 }
 
+.header-first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .logo {
   font-size: 24px;
   font-weight: bold;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo img {
   width: 30px;
   margin: 0;
   margin-right: 10px;
+}
+
+.navigation {
+  margin-left: 30px;
 }
 
 .navigation ul {
@@ -33,13 +45,14 @@
   padding: 0;
 }
 
-.navigation li {
-  margin-right: 20px;
-}
+/* .navigation li {
+  margin-right: 30px;
+} */
 
 .navigation a {
   text-decoration: none;
   color: #ffffff;
+  margin-right: 20px;
 }
 
 .account {
@@ -137,5 +150,5 @@
 .username-account {
   font-weight: bold;
   padding: auto;
-
+  margin-right: 20px;
 }

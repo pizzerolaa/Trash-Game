@@ -10,7 +10,10 @@ import game5 from '../assets/eldenring.jpg'
 const Games = () => {
   return (
     <div className="games-page">
-      {/* <h1>Games</h1> */}
+      <div className="games-banner">
+        <h1> - GAMES - </h1>
+        <h2> Welcome to the complete <strong>CATALOG</strong></h2>
+      </div>
       <div className="games-banner-1">
         <div className="games-card">
           <div className="games-image">
@@ -95,6 +98,9 @@ const Games = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="games-banner">
+        <button>More comming soon!</button>
       </div>
     </div>
   )

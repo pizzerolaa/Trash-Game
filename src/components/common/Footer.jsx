@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 GameReviews. Todos los derechos reservados.</p>
+        <p>&copy; 2024 TrashGame. Todos los derechos reservados.</p>
         <ul>
           <li><a href="/">Términos de Uso</a></li>
           <li><a href="/">Política de Privacidad</a></li>

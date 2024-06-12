@@ -11,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    margin-top: 30px;
 }
   
 .review-header h2 {
@@ -32,7 +33,7 @@
   
 .review-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -42,8 +43,8 @@
     flex-direction: column;
     justify-content: start;
     align-content: start;
-    margin-bottom: 20px;
-    max-width: 30%;
+    margin: 20px;
+    max-width: 25%;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -94,7 +95,7 @@
 .review-card-content p {
     font-size: 20px;
     color: #2c2b5ebd;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .review-stars {

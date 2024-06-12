@@ -44,18 +44,22 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo">
-        <img src={Logo} alt="" />
-        TrashGame
+      <div className="header-first">
+        <div className="logo">
+          <Link to='/' style={{ textDecoration: 'none' }}>
+            <img src={Logo} alt="" />
+            TrashGame
+          </Link>
+        </div>
+        <nav className="navigation">
+          <ul>
+            <Link to='/games'><li><a href="/">Games</a></li></Link>
+            <Link to='/reviews'><li><a href="/">Reviews</a></li></Link>
+            {/* <Link to='/'><li><a href="/">Forum</a></li></Link>
+            <Link to='/'><li><a href="/">Wishlist</a></li></Link> */}
+          </ul>
+        </nav>
       </div>
-      <nav className="navigation">
-        <ul>
-          <Link to='/'><li><a href="/">Games</a></li></Link>
-          <Link to='/'><li><a href="/">Reviews</a></li></Link>
-          <Link to='/'><li><a href="/">Forum</a></li></Link>
-          <Link to='/'><li><a href="/">Wishlist</a></li></Link>
-        </ul>
-      </nav>
       <div className="account">
         {!authState.status ? (
           <>
@@ -72,12 +76,14 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Link to='/'>
-            <button className="account-button" onClick={logout}>
-              Log Out
-            </button>
+            <Link to='reviewsForm' style={{textDecoration:'none'}}>
+              <span className='username-account'>Hello again... {authState.username}</span>
             </Link>
-            <span className='username-account'>Hello again {authState.username}!!</span>
+            <Link to='/'>
+              <button className="account-button" onClick={logout}>
+                Log Out
+              </button>
+            </Link>
           </>
         )}
       </div>

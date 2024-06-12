@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import './ReviewList.css'
 import userIcon from '../../assets/user.svg'
@@ -19,7 +20,9 @@ const ReviewList = () => {
     <div className="review-content">
       <div className="review-header">
         <h2>Latest Reviews</h2>
-        <button>View All</button>
+        <Link to='/reviews'>
+          <button>View All</button>
+        </Link>
       </div>
       <div className="review-list">
           {listOfPosts.map((value, key) => {
@@ -37,7 +40,7 @@ const ReviewList = () => {
             <div className="review-card-content">
               <h3>{value.title}</h3>
               <p>{value.postText}</p>
-              <button className="reviewButton">Read Full Review</button>
+              {/* <button className="reviewButton">Read Full Review</button> */}
             </div>
           </div>
           );
