@@ -63,3 +63,22 @@ Terminado esto, la página estará lista para su uso.
 ## HAPPY ROUTE
 
 A continuación, se muestra una guía rápida donde se exponen las distintas páginas y funcionalidades de la aplicación.
+
+### Página de inicio
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/7e47e83f-6f8c-406e-9750-9aeb98d92f38)
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/03f4ba6b-84bd-46f1-a8d4-667696ce2531)
+
+### Games Page
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/ebf764d5-41dd-4e6e-91ab-5ff3ea66765b)
+
+### Reviews Page
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/f0e43d94-523a-489e-ab82-f0730eb70dc6)
+
+
+
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/7e661918-9674-4861-afbc-90a425e3637b)
+![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/2a5cd2a1-3da2-40cf-9e65-fb467417cb6a)
+
