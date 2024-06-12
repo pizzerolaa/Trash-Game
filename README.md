@@ -60,22 +60,30 @@ Por último, entra a la carpeta de 'backend' con ayuda `cd .\backend\` y ejecuta
 
 Terminado esto, la página estará lista para su uso.
 
-## HAPPY ROUTE
+## HAPPY PATH
 
 A continuación, se muestra una guía rápida donde se exponen las distintas páginas y funcionalidades de la aplicación.
 
-### Página de inicio
+### Landing Page
+
+En esta primera vista, nos podemos dar una buena idea de lo que esta aplicación tiene que ofrecernos. 
 
 ![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/7e47e83f-6f8c-406e-9750-9aeb98d92f38)
 ![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/03f4ba6b-84bd-46f1-a8d4-667696ce2531)
+
+Podemos observar en el navbar el nombre de la página, botones de navegación hacia 'games' y 'reviews' y opciones para hacer login y/o registrar un nuevo usuario. Posteriormente, un banner de presentación, con opciones para ver los juegos registrados en la página y para escribir una reseña tu mismo y, más abajo, un muestreo de las últimas 4 reseñas cargadas por los usuarios. Por último, un footer que nos muestra distintos sitios de información relevante para el usuario y categorías relacionadas con el giro de la aplicación web (solo de ejemplo).
 
 ### Games Page
 
 ![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/ebf764d5-41dd-4e6e-91ab-5ff3ea66765b)
 
+Aquí se encuentran alojados aquellos juegos, junto con sus portadas y descripciones, que son recomendados por 'TrashGame' para que el videojugador viva y sea parte de la experiencia.
+
 ### Reviews Page
 
 ![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/f0e43d94-523a-489e-ab82-f0730eb70dc6)
+
+En esta página, podemos encontrar un listado de todas las reseñas escritas por los usuarios del sitio, expresando sus diferentes opiniones para diversos títulos. Asimismo, en cuentión de funcionalidad se incluye la posibilidad de eliminar en cualquier momento alguna referencia que haya sido realizada por el usuario logeado en el momento (como se observa en la imagen, la 'x' para borrar una reseña solo aparece en aquellos casos donde el usuario que escribió coincide con el usuario ingresado actualmente).
 
 
 
