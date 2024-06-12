@@ -29,7 +29,7 @@ function Reviews() {
     <div className="reviews">
       <div className="reviews-banner">
         <h1> - REVIEWS - </h1>
-        <h2> Where the experts <strong>SPEAK</strong></h2>
+        <h2> Where the experts <strong>TELL</strong> their stories</h2>
       </div>
       <div className="review-body">
         {listOfPosts.map((value, key) => {
