@@ -1,10 +1,25 @@
-# Game Review Web Application
+# 🎮 Game Review Web Application
 
-En este proyecto se desarrolló una aplicaicón web para hacer reseñas y comentarios a reseñas, de una variedad de juegos registrados en la página. Después de crear una cuenta e iniciar sesión, podrás acceder a estas funcionallidades y leer cada uno de las entradas hechas por diferentes usuarios.
+[![React](https://img.shields.io/badge/React-17.x-blue.svg)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-14.x-green.svg)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.x-lightgrey.svg)](https://expressjs.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.x-orange.svg)](https://www.mysql.com/)
 
-## Requerimientos
+Una aplicación web para crear y compartir reseñas de videojuegos, desarrollada como proyecto colaborativo.
 
-Para poder iniciar y correr lo contenido en este repositorio, será necesario contar ciertos programas y dependencias, los cuales se enlistan a continuación...
+## 📋 Características
+
+- Registro e inicio de sesión de usuarios
+- Visualización de juegos recomendados
+- Creación, lectura y eliminación de reseñas
+- Comentarios en las reseñas
+- Diseño responsive
+
+## 🛠️ Tecnologías Utilizadas
+
+- Frontend: React.js
+- Backend: Node.js con Express
+- Base de datos: MySQL
 
 ### Node JS
 
@@ -20,7 +35,7 @@ También es necesario contar con algún servicio o sistema de gestión de bases 
 
 Como primer paso debemos clonar este repositorio localmente con la ayuda del comando...
 
-- `git clone https://github.com/pizzerolaa/Aplicacion-MVC.git`
+- `git clone https://github.com/pizzerolaa/Trash-Game.git`
 
 ..., ejecutándolo en la terminal de tu preferencia, dentro el directorio donde quieras que se ubiquen alojados los archivos de la aplicación. 
 
@@ -60,7 +75,8 @@ Por último, entra a la carpeta de 'backend' con ayuda `cd .\backend\` y ejecuta
 
 Terminado esto, la página estará lista para su uso.
 
-## HAPPY PATH
+## 📱 Guía de Uso
+
 
 A continuación, se muestra una guía rápida donde se exponen las distintas páginas y funcionalidades de la aplicación.
 
@@ -92,3 +108,15 @@ En este apartado, se presenta el formato a llenar para subir una reseña a la p�
 ![image](https://github.com/pizzerolaa/Aplicacion-MVC/assets/128638772/2a5cd2a1-3da2-40cf-9e65-fb467417cb6a)
 
 Para entrar aquí, primero es necesario iniciar sesión con alguna cuenta de usuario que, en caso de no tener, deberás registarte sin repetir algún nombre de usuario ya existente en la base de datos. Una vez ingresado, podrás añadir cuantas reseñas creas necesarias para tus títulos favoritos y también eliminarlas si ya no las consideras convenientes.
+
+## 👥 Contribuidores
+
+Este proyecto fue desarrollado colaborativamente. Agradecemos a todos los miembros del equipo por sus contribuciones.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+---
+
+¡Disfruta compartiendo tus experiencias de juego! 🎉
